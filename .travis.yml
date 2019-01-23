@@ -1,0 +1,13 @@
+language: r
+
+install:
+  - tlmgr install latexmk  # add other packages you need
+  
+script:
+  - pandoc -s -o index.html main.tex
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_Token
+  keep-history: true
